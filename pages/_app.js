@@ -1,16 +1,21 @@
 import "../styles/globals.css";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+
 import media from "styled-media-query";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faLinkedinIn,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import {
   faBars,
   faTimes,
   faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import Image from "next/image";
 
 // import { BrowserRouter as Link } from "react-router-dom";
 
@@ -198,7 +203,7 @@ export const IconContainerMobile = styled.div`
   align-items: center;
   margin-top: 10px;
 `;
-export const StyledLink = styled.div`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #000;
   font-size: 20px;
@@ -226,6 +231,187 @@ export const Countshopcard = styled.div`
   color: white;
   background: red;
   text-align: center;
+`;
+/*Footer Style*/
+export const FooterWrapper = styled.div`
+  background-color: #0154ab;
+  width: 100%;
+  height: 100%;
+  min-height: 276px;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+    flex-direction: row;
+    height: 100px;
+    min-height: 276px;
+`}
+`;
+export const FooterLogo = styled.div`
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  height: 100%;
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+  justify-content: center;
+  max-width:300px;
+  
+
+`}
+`;
+export const Logo = styled.img`
+  width: 200px;
+  /* background-color: violet; */
+`;
+export const FooterListContainer = styled.div`
+  width: 100%;
+  /* background-color: brown; */
+  /* justify-content: center;
+  align-items: center; */
+  display: flex;
+  padding-top: 10px;
+  flex-direction: column;
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+    flex-direction: row;
+
+
+`}
+`;
+export const FooterList = styled.div`
+  width: 100%;
+  /* background-color: yellow; */
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  padding-top: 10px;
+  flex-direction: column;
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+    padding-right:15px;
+`}
+`;
+export const FooterMedia = styled.div`
+  width: 100%;
+  /* background-color: red; */
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+    justify-content: space-evenly;
+    max-width: 300px;
+    align-items:flex-start;
+    
+    height: 100%;
+`}
+`;
+export const Listulf = styled.div`
+  width: 100%;
+  /* background-color: turquoise; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 10px;
+  color: white;
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+    justify-content: left;
+`}
+`;
+export const Listul = styled.div`
+  width: 100%;
+  /* background-color: turquoise; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 10px;
+  color: #d5d5d5;
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+    justify-content: left;
+`}
+`;
+
+export const Listulfs = styled.div`
+  width: 100%;
+  /* background-color: turquoise; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 10px;
+  color: white;
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+    justify-content: center;
+`}
+`;
+export const StyledLinkFooter = styled(Link)`
+  text-decoration: none;
+  color: #d5d5d5;
+  font-size: 15px;
+  &:hover {
+    color: #f26522;
+  }
+`;
+export const StyledFontAwesomeIconfa = styled(FontAwesomeIcon)`
+  color: #fff;
+  width: 11px;
+  height: 20px;
+`;
+export const StyledFontAwesomeIconli = styled(FontAwesomeIcon)`
+  color: #fff;
+  width: 20px;
+  height: 20px;
+`;
+export const StyledFontAwesomeIconyou = styled(FontAwesomeIcon)`
+  color: #fff;
+  width: 24px;
+  height: 17px;
+`;
+export const MediaContent = styled.div`
+  width: 100%;
+  /* background-color: cyan; */
+  display: flex;
+  flex-direction: column;
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+    margin-top: 93px;
+`}
+`;
+export const MediaContentforicons = styled.div`
+  width: 100%;
+  /* background-color: cyan; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  ${media.greaterThan("medium")`
+    /* screen width is less than 768px (medium) */
+    padding-bottom:0px;
+`}
+`;
+/*call to action*/
+export const CallToActionContainer = styled.div`
+  width: 100%;
+  height: 180px;
+  display: flex;
+  /* overflow-x: hidden; */
+  background-color: red;
+  position: relative;
+`;
+export const CallToActionImage = styled(Image)`
+  width: 100%;
+  height: 180px;
 `;
 
 function MyApp({ Component, pageProps }) {
@@ -267,47 +453,21 @@ function MyApp({ Component, pageProps }) {
         </LogoContainer>
         <MenuDeskContainer>
           <MenuDesk>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink href="/">Accueil</StyledLink>
           </MenuDesk>
           <MenuDesk>
-            <StyledLink to="/About">About us</StyledLink>
+            <StyledLink href="/objectif">Notre objectif</StyledLink>
           </MenuDesk>
           <MenuDesk>
-            <StyledLink to="/contact">Contact us</StyledLink>
+            <StyledLink href="/impactpostive">Impact postive</StyledLink>
           </MenuDesk>
-          <MenuDeskCategories>
-            <StyledLink>Categories</StyledLink>
-
-            <StyledFontAwesomeIconArrow
-              isOpen={isSubMenuOpen}
-              icon={faCaretDown}
-              onClick={onSubMenuClicked}
-            />
-            <SubMenuDesk isOpen={isSubMenuOpen}>
-              <SubMenuDeskContent isOpen={isSubMenuOpen}>
-                <StyledLink to="/Laptop">Laptop</StyledLink>
-              </SubMenuDeskContent>
-              <SubMenuDeskContent isOpen={isSubMenuOpen}>
-                <StyledLink to="/Phone">Phone</StyledLink>
-              </SubMenuDeskContent>
-              <SubMenuDeskContent isOpen={isSubMenuOpen}>
-                <StyledLink to="/Accessoires">Accessoires</StyledLink>
-              </SubMenuDeskContent>
-            </SubMenuDesk>
-          </MenuDeskCategories>
+          <MenuDesk>
+            <StyledLink href="/impactnegative">Impact negative</StyledLink>
+          </MenuDesk>
+          <MenuDesk>
+            <StyledLink href="/contactus">Contactez nous</StyledLink>
+          </MenuDesk>
         </MenuDeskContainer>
-        <IconContainer>
-          <StyledFontAwesomeIconMenu icon={faHeart} />
-          <CartItemContainer>
-            <Countshopcard>0</Countshopcard>
-            <StyledLink to="/cart">
-              {" "}
-              <StyledFontAwesomeIconMenu icon={faCartShopping} />
-            </StyledLink>
-          </CartItemContainer>
-
-          <StyledFontAwesomeIconMenu icon={faUser} />
-        </IconContainer>
         <BurgerContainer>
           <StyledFontAwesomeIcon icon={faBars} onClick={onBurgerClicked} />
         </BurgerContainer>
@@ -317,48 +477,86 @@ function MyApp({ Component, pageProps }) {
           </CancelButtonContainer>
           <MenuitemContainer>
             <Menuitem onClick={onCancelClicked}>
-              <StyledLink to="/">Home</StyledLink>
+              <StyledLink href="/">Accueil</StyledLink>
             </Menuitem>
             <Menuitem onClick={onCancelClicked}>
-              <StyledLink to="/About">About us</StyledLink>
+              <StyledLink href="/objectif">Notre objectif</StyledLink>
             </Menuitem>
             <Menuitem onClick={onCancelClicked}>
-              <StyledLink to="/contact">Contact us</StyledLink>
+              <StyledLink href="/impactpostive">Impact postive</StyledLink>
             </Menuitem>
-            <Menuitem>
-              <StyledLink>Categories</StyledLink>
-              <StyledFontAwesomeIconArrow
-                isOpen={isSubMenuOpen}
-                icon={faCaretDown}
-                onClick={onSubMenuClicked}
-              />
+            <Menuitem onClick={onCancelClicked}>
+              <StyledLink href="/impactnegative">Impact negative</StyledLink>
             </Menuitem>
-            <SubMenu isOpen={isSubMenuOpen}>
-              <SubMenuContent onClick={onCancelClicked} isOpen={isSubMenuOpen}>
-                <StyledLink to="/Laptop">Laptop</StyledLink>
-              </SubMenuContent>
-              <SubMenuContent onClick={onCancelClicked} isOpen={isSubMenuOpen}>
-                <StyledLink to="/Phone">Phone</StyledLink>
-              </SubMenuContent>
-              <SubMenuContent onClick={onCancelClicked} isOpen={isSubMenuOpen}>
-                <StyledLink to="/Accessoires">Accessoires</StyledLink>
-              </SubMenuContent>
-            </SubMenu>
+            <Menuitem onClick={onCancelClicked}>
+              <StyledLink href="/contactus">Contactez nous</StyledLink>
+            </Menuitem>
           </MenuitemContainer>
-          <IconContainerMobile>
-            <StyledFontAwesomeIconMenu icon={faHeart} />
-            <StyledLink to="/cart" onClick={onCancelClicked}>
-              <CartItemContainer>
-                <Countshopcard>0</Countshopcard>
-                <StyledFontAwesomeIconMenu icon={faCartShopping} />
-              </CartItemContainer>
-            </StyledLink>
-            <StyledFontAwesomeIconMenu icon={faUser} />
-          </IconContainerMobile>
         </Drawer>
       </NavContainer>
       <Component {...pageProps} />
-      <h1>hello world</h1>
+      <CallToActionContainer>
+        <CallToActionImage
+          src="/calltoaction.jpg"
+          layout="fill"
+          objectFit="cover"
+        />
+      </CallToActionContainer>
+      <FooterWrapper>
+        <FooterLogo>
+          <Logo
+            src="https://www.mecatronic.tn/wp-content/uploads/2019/09/cluster-logo9.png"
+            alt="aaa"
+          />
+        </FooterLogo>
+        <FooterListContainer>
+          <FooterList>
+            <Listulf>Information</Listulf>
+            <Listul>
+              <StyledLinkFooter href="/">Stocks</StyledLinkFooter>
+            </Listul>
+            <Listul>
+              <StyledLinkFooter href="/">Shops</StyledLinkFooter>
+            </Listul>
+            <Listul>
+              <StyledLinkFooter href="/"> News</StyledLinkFooter>
+            </Listul>
+          </FooterList>
+          <FooterList>
+            <Listulf>Clients</Listulf>
+            <Listul>
+              <StyledLinkFooter href="/">Corporate sales</StyledLinkFooter>
+            </Listul>
+            <Listul>
+              <StyledLinkFooter href="/">Delivery and payment</StyledLinkFooter>
+            </Listul>
+            <Listul>
+              <StyledLinkFooter href="/">About company</StyledLinkFooter>
+            </Listul>
+          </FooterList>
+          <FooterList>
+            <Listulf>Additionally</Listulf>
+            <Listul>
+              <StyledLinkFooter href="/">Services Center</StyledLinkFooter>
+            </Listul>
+            <Listul>
+              <StyledLinkFooter href="/">
+                Terms of use of the site
+              </StyledLinkFooter>
+            </Listul>
+          </FooterList>
+        </FooterListContainer>
+        <FooterMedia>
+          <MediaContent>
+            <Listulfs>Social Media</Listulfs>
+            <MediaContentforicons>
+              <StyledFontAwesomeIconfa icon={faFacebookF} />
+              <StyledFontAwesomeIconli icon={faLinkedinIn} />
+              <StyledFontAwesomeIconyou icon={faYoutube} />
+            </MediaContentforicons>
+          </MediaContent>
+        </FooterMedia>
+      </FooterWrapper>
     </div>
   );
 }
