@@ -66,7 +66,7 @@ const Contact = () => {
         <button
           className="btn btn-success"
           type="submit"
-          style={{ width: "30%", marginTop: "4%" }}
+          style={{ width: "30%", marginTop: "4%", marginBottom: "2%" }}
           onClick={() => Alert(name, prenom)}
         >
           Envoyer
