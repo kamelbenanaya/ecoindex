@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // import { BrowserRouter as Link } from "react-router-dom";
 
@@ -62,9 +63,9 @@ export const StyledFontAwesomeIconArrow = styled(FontAwesomeIcon)`
   transform: ${(props) => (props.isOpen ? "rotate(180deg)" : "rotate(0deg)")};
   transition: 500ms;
 `;
-export const LogoImg = styled.img`
+export const LogoImg = styled(Image)`
   width: 150px;
-  height: 40px;
+  height: 78px;
 `;
 export const Drawer = styled.div`
   background-color: white;
@@ -265,8 +266,9 @@ export const FooterLogo = styled.div`
 
 `}
 `;
-export const Logo = styled.img`
+export const Logo = styled(Image)`
   width: 200px;
+  height: 90%;
   /* background-color: violet; */
 `;
 export const FooterListContainer = styled.div`
@@ -413,7 +415,26 @@ export const CallToActionImage = styled(Image)`
   width: 100%;
   height: 180px;
 `;
-
+export const CallToActiontext = styled.div`
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+export const CallToActiontextTitle = styled.div`
+  display: flex;
+  color: #fff;
+  font-size: 40px;
+`;
+export const CallToActionButton = styled.button`
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: #014f3b;
+`;
 function MyApp({ Component, pageProps }) {
   function disableScrolling() {
     var x = window.scrollX;
@@ -445,11 +466,7 @@ function MyApp({ Component, pageProps }) {
     <div>
       <NavContainer>
         <LogoContainer>
-          <LogoImg
-            src="https://www.mecatronic.tn/wp-content/uploads/2019/09/cluster-logo9.png"
-            width={"150px"}
-            alt="aaa"
-          />
+          <LogoImg src="/logo.png" width={500} height={500} />
         </LogoContainer>
         <MenuDeskContainer>
           <MenuDesk>
@@ -501,13 +518,14 @@ function MyApp({ Component, pageProps }) {
           layout="fill"
           objectFit="cover"
         />
+        <CallToActiontext>
+          <CallToActiontextTitle>SIDA SUPPORT</CallToActiontextTitle>
+          <CallToActionButton>Contactez nous</CallToActionButton>
+        </CallToActiontext>
       </CallToActionContainer>
       <FooterWrapper>
         <FooterLogo>
-          <Logo
-            src="https://www.mecatronic.tn/wp-content/uploads/2019/09/cluster-logo9.png"
-            alt="aaa"
-          />
+          <Logo src="/logo.png" width={500} height={500} />
         </FooterLogo>
         <FooterListContainer>
           <FooterList>
