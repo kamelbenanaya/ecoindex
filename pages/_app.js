@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-
+import "../styles/indexes.css";
 import media from "styled-media-query";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,6 +17,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useRouter } from "next/router";
 
 // import { BrowserRouter as Link } from "react-router-dom";
 
@@ -25,7 +26,7 @@ export const NavContainer = styled.div`
   height: 80px;
   display: flex;
   /* overflow-x: hidden; */
-  background-color: white;
+  background-color: #0154ab;
 `;
 export const LogoContainer = styled.div`
   width: 100%;
@@ -53,12 +54,12 @@ export const BurgerContainer = styled.div`
 `;
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   width: 30px;
-  color: #f26522;
+  color: #000;
   height: 30px;
 `;
 export const StyledFontAwesomeIconArrow = styled(FontAwesomeIcon)`
   width: 30px;
-  color: #f26522;
+  color: #000;
   height: 30px;
   transform: ${(props) => (props.isOpen ? "rotate(180deg)" : "rotate(0deg)")};
   transition: 500ms;
@@ -191,7 +192,7 @@ export const IconContainer = styled.div`
 export const StyledFontAwesomeIconMenu = styled(FontAwesomeIcon)`
   width: 25px;
   height: 21px;
-  color: #f26522;
+  color: #000;
   padding: 5px;
   position: relative;
 `;
@@ -206,11 +207,11 @@ export const IconContainerMobile = styled.div`
 `;
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-size: 20px;
   font-family: "Baloo Bhaijaan";
   &:hover {
-    color: #f26522;
+    color: #000;
   }
 `;
 export const CartItemContainer = styled.div`
@@ -360,7 +361,7 @@ export const StyledLinkFooter = styled(Link)`
   color: #d5d5d5;
   font-size: 15px;
   &:hover {
-    color: #f26522;
+    color: #000;
   }
 `;
 export const StyledFontAwesomeIconfa = styled(FontAwesomeIcon)`
@@ -433,9 +434,10 @@ export const CallToActionButton = styled.button`
   width: 150px;
   height: 50px;
   border-radius: 20px;
-  background-color: #014f3b;
+  background-color: green;
 `;
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   function disableScrolling() {
     var x = window.scrollX;
     var y = window.scrollY;
@@ -520,7 +522,13 @@ function MyApp({ Component, pageProps }) {
         />
         <CallToActiontext>
           <CallToActiontextTitle>SIDA SUPPORT</CallToActiontextTitle>
-          <CallToActionButton>Contactez nous</CallToActionButton>
+          <CallToActionButton
+            onClick={() => {
+              router.push("/contactus");
+            }}
+          >
+            Contactez nous
+          </CallToActionButton>
         </CallToActiontext>
       </CallToActionContainer>
       <FooterWrapper>
@@ -531,10 +539,10 @@ function MyApp({ Component, pageProps }) {
           <FooterList>
             <Listulf>Information</Listulf>
             <Listul>
-              <StyledLinkFooter href="/">Stocks</StyledLinkFooter>
+              <StyledLinkFooter href="/">wikipedia</StyledLinkFooter>
             </Listul>
             <Listul>
-              <StyledLinkFooter href="/">Shops</StyledLinkFooter>
+              <StyledLinkFooter href="/">CDC</StyledLinkFooter>
             </Listul>
             <Listul>
               <StyledLinkFooter href="/"> News</StyledLinkFooter>
@@ -543,10 +551,12 @@ function MyApp({ Component, pageProps }) {
           <FooterList>
             <Listulf>Clients</Listulf>
             <Listul>
-              <StyledLinkFooter href="/">Corporate sales</StyledLinkFooter>
+              <StyledLinkFooter href="/">
+                Corporate organisation
+              </StyledLinkFooter>
             </Listul>
             <Listul>
-              <StyledLinkFooter href="/">Delivery and payment</StyledLinkFooter>
+              <StyledLinkFooter href="/">Our donation</StyledLinkFooter>
             </Listul>
             <Listul>
               <StyledLinkFooter href="/">About company</StyledLinkFooter>
